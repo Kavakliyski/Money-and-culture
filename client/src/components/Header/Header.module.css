@@ -23,13 +23,12 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
-    text-align: right;
+    text-align: center;
     padding-left: 200px;
     padding-right: 200px;
 }
 
 .inner_main_menu ul li {
-    float: none;
     display: inline-block;
     padding-left: 30px;
     padding-right: 30px;
@@ -38,27 +37,6 @@
     vertical-align: middle;
 }
 
-.inner_main_menu ul li:nth-child(1) {
-    float: left;
-}
-
-.inner_main_menu ul li:nth-child(2) {
-    float: left;
-}
-
-.inner_main_menu ul li:nth-child(3) {
-    float: center;
-}
-
-.inner_main_menu ul li:nth-child(4) {
-    float: right;
-}
-
-.inner_main_menu ul li:nth-child(5) {
-    float: right;
-}
-
-
 .menuToggle {
     display: none;
 }
@@ -66,22 +44,37 @@
 .logo {
     width: 20vw;
     position: absolute;
-    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-top: 25px;
+    padding-top: 150px;
 }
 
 .LaguageDiv {
     color: #d0d9db;
     font-weight: bold;
     font-size: 1.5vw;
-
     padding-right: 10px;
     position: absolute;
     top: 65px;
     right: 0;
 }
+
+.moreDropdow {
+    position: relative;
+}
+
+.moreDropdownContent {
+    position: absolute;
+    background-color: #d0d9db;
+    z-index: 1;
+    width: auto !important;
+    padding: 1px !important;
+    display: inline-block;
+}
+
+/* .moreDropdownContent.show{
+    display: block;
+} */
 
 /* Styles for mobile screens */
 @media (max-width: 600px) {
@@ -107,5 +100,17 @@
     .LaguageDiv {
         font-size: 7vw;
         top: 10px;
+    }
+
+    .inner_main_menu ul {
+        padding: 0px 0px 0px 0px;
+        width: 100vw;
+
+    }
+
+    .logo {
+        width: 60vw;
+        padding-top: 120px;
+
     }
 }

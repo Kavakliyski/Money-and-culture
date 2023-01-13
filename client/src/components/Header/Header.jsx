@@ -1,5 +1,5 @@
 // react
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 // images
 import logo from '../../assets/logo/pklogo.png'
@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 
 
 // styled components
-const H1 = styled.h3`
+const Links1 = styled.h3`
     justify-content: center;
 
     padding: 20px;
@@ -40,6 +40,29 @@ const H1 = styled.h3`
         }
     }
 
+`
+
+const DropdownButton = styled.h3`
+    color: #d0d9db;
+    justify-content: center;
+    padding: 20px;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    cursor: help;
+
+    &:hover {
+        transition: 0.25s;
+        border: 3px solid #d0d9db;  
+        border-radius: 30px;
+    }
+
+    @media screen and (max-width: 880px){
+        justify-content: center;
+
+        &:hover{
+            border: 3px solid transparent;  
+        }
+    }
 `
 
 const LangButtonEN = styled.button`
@@ -79,31 +102,48 @@ const Nav = styled.nav`
     }
 `
 
-const LogoPik = styled.img`
-    top: 50px;
-    width: 15vw;
-    margin: 0 auto;
-    display: block;
-    position: absolute;
-    left: calc((100% - 15%) / 2);
-    // z-index: 10;
-
-    @media screen and (max-width: 920px){
-        left: 0;
-        // margin: 0;
-        position: unset;
-        top: 0;
-        padding-top: 40px;
-        width: 300px;
-    }
-`
-
 
 export const Header = () => {
 
     // nav links
     let activeStyle = {
         color: "#878787",
+    };
+
+    // dropdown
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const handleClickOutside = event => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsOpen(false);
+        };
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
+            window.addEventListener("scroll", handleScroll);
+        } else {
+            window.removeEventListener("scroll", handleScroll);
+        }
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [isOpen]);
+
+    const handleScroll = () => {
+        setIsOpen(false);
     };
 
     // language switching
@@ -140,7 +180,9 @@ export const Header = () => {
                     >EN</LangButtonEN>
                 </div>
 
-                <img src={logo} alt="logo" className={styles.logo} />
+                <Link to="/">
+                    <img src={lang === "bg" ? logo : logo2} alt="" className={styles.logo} />
+                </Link>
 
                 <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>&#9776;</button>
 
@@ -154,7 +196,7 @@ export const Header = () => {
                                     isActive ? activeStyle : undefined
                                 }
                             >
-                                <H1>{t('home')}</H1>
+                                <Links1>{t('home')}</Links1>
                             </NavLink>
                         </li>
                         <li>
@@ -164,7 +206,7 @@ export const Header = () => {
                                     isActive ? activeStyle : undefined
                                 }
                             >
-                                <H1>{t('archive')}</H1>
+                                <Links1>{t('archive')}</Links1>
                             </NavLink>
                         </li>
                         <li>
@@ -177,18 +219,24 @@ export const Header = () => {
                                     isActive ? activeStyle : undefined
                                 }
                             >
-                                <H1>{t('guidelines for authors')}</H1>
+                                <Links1>{t('guidelines for authors')}</Links1>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="archive"
-                                style={({ isActive }) =>
-                                    isActive ? activeStyle : undefined
-                                }
-                            >
-                                <H1>{t('more')}</H1>
-                            </NavLink>
+                            <div className={styles.moreDropdown}>
+                                <DropdownButton
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    ref={dropdownRef}
+                                >{t('more')}
+                                </DropdownButton>
+                                {isOpen && (
+                                    <ul className={styles.moreDropdownContent}>
+                                        <li >Option 1</li>
+                                        <li>Option 2</li>
+                                        <li>Option 3</li>
+                                    </ul>
+                                )}
+                            </div>
                         </li>
 
                     </ul>

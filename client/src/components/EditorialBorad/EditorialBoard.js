@@ -99,6 +99,12 @@ const editors = [
         'image': ali_veisel
     },
     {
+        'id': 19,
+        'name': 'доц. д-р Радостин Вазов',
+        'hyperlink': 'https://vuzflab.eu/radostin_vazov/',
+        'image': r_vazov
+    },
+    {
         'id': 12,
         'name': 'проф. д-р Юлия Добрева',
         'hyperlink': 'https://vuzflab.eu/dobreva/',
@@ -106,7 +112,7 @@ const editors = [
     },
     {
         'id': 13,
-        'name': 'доц. д-р Даниела Илиева',
+        'name': 'проф. д-р Даниела Илиева',
         'hyperlink': 'https://vuzflab.eu/dkoleva/',
         'image': d_ilieva
     },
@@ -124,19 +130,19 @@ const editors = [
     },
     {
         'id': 16,
-        'name': 'Доц. д-р Наталия Футекова',
+        'name': 'доц. д-р Наталия Футекова',
         'hyperlink': 'https://vuzflab.eu/nataliafutekova/',
         'image': natalia_futekova
     },
     {
         'id': 17,
-        'name': 'доц. д-р Теодора Лазарова',
+        'name': 'проф. д-р Теодора Лазарова',
         'hyperlink': 'https://vuzflab.eu/%D0%B4%D0%BE%D1%86-%D0%B4-%D1%80-%D1%82%D0%B5%D0%BE%D0%B4%D0%BE%D1%80%D0%B0-%D0%BB%D0%B0%D0%B7%D0%B0%D1%80%D0%BE%D0%B2%D0%B0/',
         'image': t_lazarova
     },
     {
         'id': 18,
-        'name': 'Проф. д-р Любка Ценова',
+        'name': 'проф. д-р Любка Ценова',
         'hyperlink': 'https://vuzflab.eu/lubka_cenova/',
         'image': lubka_cenova
     },
@@ -146,15 +152,10 @@ const editors = [
         'hyperlink': 'https://vuzflab.eu/bjekov/',
         'image': b_jekov
     },
-    {
-        'id': 19,
-        'name': 'доц. д-р Радостин Вазов',
-        'hyperlink': 'https://vuzflab.eu/radostin_vazov/',
-        'image': r_vazov
-    },
+
     {
         'id': 21,
-        'name': 'д-р Бисер Райнов',
+        'name': 'гл. ас. д-р Бисер Райнов',
         'hyperlink': 'https://vuzflab.eu/%D0%B4-%D1%80-%D0%B1%D0%B8%D1%81%D0%B5%D1%80-%D1%80%D0%B0%D0%B9%D0%BD%D0%BE%D0%B2/',
         'image': b_rajnov
     },
@@ -185,7 +186,7 @@ const editors = [
     {
         'id': 26,
         'name': 'Гл. ас. д-р Росица Тончева',
-        'hyperlink': 'https://vuzflab.eu/%D0%B4-%D1%80-%D1%8F%D1%81%D0%B5%D0%BD-%D0%B4%D0%B8%D0%BC%D0%B8%D1%82%D1%80%D0%BE%D0%B2/',
+        'hyperlink': 'https://vuzflab.eu/гл-ас-д-р-росица-тончева/',
         'image': 'none'
     }
 

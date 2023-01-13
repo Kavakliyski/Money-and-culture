@@ -10,7 +10,7 @@ import {
 
 // images
 import logo from '../../../assets/logo/pklogo.png'
-import logo2 from '../../../assets/logo/pklogo.png'
+import logo2 from '../../../assets/logo/pklogoen.png'
 
 // i18next
 import { useTranslation } from "react-i18next";

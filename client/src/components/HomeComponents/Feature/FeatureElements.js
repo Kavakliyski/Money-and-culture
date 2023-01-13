@@ -11,8 +11,9 @@ export const Image = styled.img`
 export const Wrapper = styled.div`
         background-image: url(${img});
 
-        background-size: 100vw;
+        // background-size: 100vw;
         background-repeat: no-repeat;
+        background-size: cover;
         // background-attachment: fixed;
         background-position: center;
 
@@ -22,7 +23,7 @@ export const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
 
-        padding: 150px 0px 150px 0px;
+        padding: 15vh 0px 20vh 0px;
 `
 
 
@@ -45,7 +46,7 @@ export const Paragraph = styled.p`
 
 export const Logo = styled.img`
 
-        width: auto;
+        width: 975px;
         
         @media all and (max-width: 880px){
                 width: 80vw;

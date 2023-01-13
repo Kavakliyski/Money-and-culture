@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 // images
 import logo from '../../assets/logo/pklogo.png'
-import logo2 from '../../assets/logo/pklogo.png'
+import logo2 from '../../assets/logo/pklogoen.png'
 
 // react router dom
 import { NavLink, Link } from 'react-router-dom'
@@ -86,19 +86,21 @@ const H1 = styled.h3`
 `
 
 const LogoPik = styled.img`
-    padding-top: 35px;
-    width: 300px;
+    top: 50px;
+    width: 15vw;
     margin: 0 auto;
     display: block;
     position: absolute;
     left: calc((100% - 15%) / 2);
     // z-index: 10;
 
-    @media screen and (max-width: 880px){
+    @media screen and (max-width: 920px){
         left: 0;
         // margin: 0;
         position: unset;
-           
+        top: 0;
+        padding-top: 40px;
+        width: 300px;
     }
 `
 
@@ -279,4 +281,3 @@ export const NavigationBar = () => {
         </>
     )
 }
-

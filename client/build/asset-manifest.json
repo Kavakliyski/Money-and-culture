@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.f159aa2b.css",
-    "main.js": "/static/js/main.a6c84068.js",
+    "main.js": "/static/js/main.1d47129e.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/pk1.png": "/static/media/pk1.e98c415f6c11e3ab1862.png",
     "static/media/korica4-01.jpg": "/static/media/korica4-01.e786feefcb4a2df24531.jpg",
     "static/media/vuzflogo.png": "/static/media/vuzflogo.87ea570ce398934baf5d.png",
+    "static/media/pklogoen.png": "/static/media/pklogoen.60fd3abd2e5699ad467c.png",
     "static/media/pklogo.png": "/static/media/pklogo.c8367f2b3b637c7d8a95.png",
     "static/media/lubka_cenova.jpg": "/static/media/lubka_cenova.027bd294ec35fbb862c7.jpg",
     "static/media/ognyana_stoichkova.jpg": "/static/media/ognyana_stoichkova.9e864429514f6dc7e895.jpg",
@@ -37,11 +38,11 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.f159aa2b.css.map": "/static/css/main.f159aa2b.css.map",
-    "main.a6c84068.js.map": "/static/js/main.a6c84068.js.map",
+    "main.1d47129e.js.map": "/static/js/main.1d47129e.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f159aa2b.css",
-    "static/js/main.a6c84068.js"
+    "static/js/main.1d47129e.js"
   ]
 }

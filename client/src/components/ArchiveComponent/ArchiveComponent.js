@@ -67,47 +67,32 @@ export const ArchiveComponent = () => {
             <div className={styles.ArchiveComponentDiv}>
 
                 {listItems}
-
+{/* 
                 <div className={styles.ArchiveComponentCards}>
                     <iframe src="https://drive.google.com/file/d/12GIPAonrv6o6W3haDxZr-d2WI5GAu_92/preview" width="440" height="610" allow="autoplay"></iframe>
                     <h2>1/2022</h2>
-                </div>
+                </div> */}
 
                 {/* 2021 */}
                 <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1zvlZrUXtojV1I4si-Tu-TJSk5Q7jl8oC/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>4/2021</h2>
-                </div>
-                <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1yF8rRXN4fzjz2JaTss--QxApDWcYXaWw/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>3/2021</h2>
+                    <iframe src="https://drive.google.com/file/d/1iYiW0tsRhyOgtLAZeFynagtgJZdX86vs/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>1/2021</h2>
                 </div>
                 <div className={styles.ArchiveComponentCards}>
                     <iframe src="https://drive.google.com/file/d/1zfm_yVkKslUN0GTW4vApg3JCSjmTwxD5/preview" width="440" height="610" allow="autoplay"></iframe>
                     <h2>2/2021</h2>
                 </div>
                 <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1iYiW0tsRhyOgtLAZeFynagtgJZdX86vs/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>1/2021</h2>
-                </div>
-
-
-                {/* 2020 */}
-                <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1oGF4Qy1K5jWQ1T1eefT-sixyeQPHNHmw/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>4/2020</h2>
+                    <iframe src="https://drive.google.com/file/d/1yF8rRXN4fzjz2JaTss--QxApDWcYXaWw/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>3/2021</h2>
                 </div>
                 <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/11Qfymjs3ZjjsUmdiEbDlRyeXmewu6KCi/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>3/2020</h2>
+                    <iframe src="https://drive.google.com/file/d/1zvlZrUXtojV1I4si-Tu-TJSk5Q7jl8oC/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>4/2021</h2>
                 </div>
+            
                 <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1dOy92YBg5lcBLBQXYy60EwHvmrpKaX6x/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>2/2020</h2>
-                </div>
-                <div className={styles.ArchiveComponentCards}>
-                    <iframe src="https://drive.google.com/file/d/1WoHtVmZQEwU1zI8zTCV0BSADjicIZ18v/preview" width="440" height="610" allow="autoplay"></iframe>
-                    <h2>1/2020</h2>
+                    
                 </div>
 
             </div>

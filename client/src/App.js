@@ -12,8 +12,6 @@ import {
 import { Suspense } from 'react';
 
 // components
-// import { Navbar } from './components/NavigationBar/Navbar';
-// import { NavigationBar } from './components/NavigationBar2.0/NavigationBar';
 import { Footer } from './components/Footer/Footer';
 import { ScrollTop } from './components/ScrollTop';
 import { ScrollButton } from './utilities/ScrollButton';
@@ -44,8 +42,6 @@ function App() {
             <div className="App">
                 <BrowserRouter>
                     <ScrollButton />
-                    {/* <Navbar /> */}
-                    {/* <NavigationBar /> */}
                     <Header />
                     <Routes>
                         <Route path="/" element={<Home />} />

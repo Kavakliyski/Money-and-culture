@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f159aa2b.css",
-    "main.js": "/static/js/main.1d47129e.js",
+    "main.css": "/static/css/main.4d27af37.css",
+    "main.js": "/static/js/main.357ca07d.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/pk1.png": "/static/media/pk1.e98c415f6c11e3ab1862.png",
     "static/media/korica4-01.jpg": "/static/media/korica4-01.e786feefcb4a2df24531.jpg",
@@ -37,12 +37,12 @@
     "static/media/location.svg": "/static/media/location.ef621ac7695a91c38be0a3d6f909cad8.svg",
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.f159aa2b.css.map": "/static/css/main.f159aa2b.css.map",
-    "main.1d47129e.js.map": "/static/js/main.1d47129e.js.map",
+    "main.4d27af37.css.map": "/static/css/main.4d27af37.css.map",
+    "main.357ca07d.js.map": "/static/js/main.357ca07d.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f159aa2b.css",
-    "static/js/main.1d47129e.js"
+    "static/css/main.4d27af37.css",
+    "static/js/main.357ca07d.js"
   ]
 }

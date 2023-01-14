@@ -51,6 +51,10 @@ export const Logo = styled.img`
         @media all and (max-width: 880px){
                 width: 80vw;
         }
+
+        @media screen and (min-width: 601px)and (max-width: 1700px) {
+                width: 70vw;
+        }
 `
 
 export const Button = styled.button`

@@ -1,5 +1,5 @@
 // react
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // images
 import logo from '../../assets/logo/pklogo.png'
@@ -32,7 +32,7 @@ const Links1 = styled.h3`
         border-radius: 30px;
     }
 
-    @media screen and (max-width: 880px){
+    @media screen and (max-width: 600px){
         justify-content: center;
 
         &:hover{
@@ -40,6 +40,11 @@ const Links1 = styled.h3`
         }
     }
 
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        padding: 1px;
+        font-size: 12px;
+    }
+    
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer */
@@ -69,6 +74,11 @@ const LinkDrop = styled.h3`
         }
     }
 
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        padding: 1px;
+        font-size: 12px;
+    }
+
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer */
@@ -87,6 +97,10 @@ const LangButtonEN = styled.button`
     @media screen and (max-width: 880px){
         font-size: 5vw;
     }
+
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        font-size: 2vw;
+    }
 `
 
 const LangButtonBG = styled.button`
@@ -100,6 +114,10 @@ const LangButtonBG = styled.button`
 
     @media screen and (max-width: 880px){
         font-size: 5vw;
+    }
+
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        font-size: 2vw;
     }
 `
 
@@ -115,9 +133,7 @@ const Nav = styled.nav`
 const StyledBurger = styled.div`
     width: 2rem;
     height: 2rem;
-    position: fixed;
-    top: 15px;
-    left: 20px;
+    position: aboslute;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -206,16 +222,18 @@ export const Header = () => {
                     >EN</LangButtonEN>
                 </div>
 
-                <Link to="/">
+                <Link
+                    to="/"
+                    onClick={() => setMenuOpen(false)}>
                     <img src={lang === "bg" ? logo : logo2} alt="" className={styles.logo} />
                 </Link>
 
                 <div className={styles.menuToggle}>
-                        <StyledBurger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
-                            <div />
-                            <div />
-                            <div />
-                        </StyledBurger>
+                    <StyledBurger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+                        <div />
+                        <div />
+                        <div />
+                    </StyledBurger>
                 </div>
 
                 <div className={styles.inner_main_menu}>
@@ -223,6 +241,7 @@ export const Header = () => {
                         <li>
                             <NavLink
                                 to="/"
+                                onClick={() => setMenuOpen(false)}
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : undefined
                                 }
@@ -233,6 +252,7 @@ export const Header = () => {
                         <li>
                             <NavLink
                                 to="archive"
+                                onClick={() => setMenuOpen(false)}
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : undefined
                                 }
@@ -246,6 +266,7 @@ export const Header = () => {
                         <li>
                             <NavLink
                                 to="authors"
+                                onClick={() => setMenuOpen(false)}
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : undefined
                                 }
@@ -261,10 +282,22 @@ export const Header = () => {
                                 >{t('more')}</LinkDrop>
                                 {isOpen && (
                                     <div className={styles.DropDownContent}>
-                                        <NavLink to="about">{t('about')}</NavLink>
-                                        <NavLink to="editorialboard">{t('editorial staff')}</NavLink>
-                                        <NavLink to="terms">{t('general terms')}</NavLink>
-                                        <NavLink to="policy">{t('privacy policy')}</NavLink>
+                                        <NavLink
+                                            to="about"
+                                            onClick={() => setMenuOpen(false)}
+                                        >{t('for the magazine')}</NavLink>
+                                        <NavLink
+                                            to="editorialboard"
+                                            onClick={() => setMenuOpen(false)}
+                                        >{t('editorial staff')}</NavLink>
+                                        <NavLink
+                                            to="terms"
+                                            onClick={() => setMenuOpen(false)}
+                                        >{t('general terms')}</NavLink>
+                                        <NavLink
+                                            to="policy"
+                                            onClick={() => setMenuOpen(false)}
+                                        >{t('privacy policy')}</NavLink>
                                     </div>
                                 )}
 

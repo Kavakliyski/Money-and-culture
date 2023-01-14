@@ -8,8 +8,14 @@ import { ReactComponent as MailSvg } from '../../../assets/svg/mail.svg'
 // styles
 import styles from './ContactUs.module.css'
 
+import { useTranslation } from "react-i18next";
+
 
 export const ContactUs = () => {
+
+    const { t } = useTranslation(["contact_us"]);
+
+
     return (
         <div className={styles.ContactUsWrapper}>
             <div className={styles.ContactUsInnerWrapper}>
@@ -22,7 +28,7 @@ export const ContactUs = () => {
                     />
                 </div>
                 <div className={styles.ContactUsContactInfo}>
-                    <h1><strong>КОНТАКТИ</strong></h1>
+                    <h1><strong>{t('contacts')}</strong></h1>
 
                     <table>
                         <tbody>
@@ -31,14 +37,14 @@ export const ContactUs = () => {
                                     <AdrSvg width="70px" />
                                 </td>
                                 <td>
-                                    София 1618 ул. „Гусла No1 (кв. „Овча Купел”) Висше училище по застраховане и финанси ст. 405
+                                    {t('adr')}
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <PhoneSvg width="70px" />
                                 </td>
-                                <td>00359 2 40 80 15</td>
+                                <td>00359 2 40 15 809</td>
                             </tr>
                             <tr>
                                 <td>

@@ -1,12 +1,19 @@
-
-import logoPik from '../../assets/logo/pklogo.png'
+// images
+import logo from '../../assets/logo/pklogo.png'
+import logo2 from '../../assets/logo/pklogoen.png'
 import logoVUZF from '../../assets/logo/vuzflogo.png'
 
+// styles
 import styles from './Footer.module.css'
 import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
+// i18next
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
+
+console.log(i18n.language)
 
 const StyledHr = styled.hr`
     border-top: 4px solid #d0d9db;
@@ -52,18 +59,21 @@ const StyledImgPik = styled.img`
 
 export const Footer = () => {
 
+    const { t } = useTranslation(["navbar"]);
+
+
     return (
         <div className={styles.FooterWrapper}>
             <div className={styles.FooterDivCopyRight}>
                 <p>Copyright 2020</p>
-                <p>Висше училище по застраховане и финанси</p>
-                <p>Никаква част от тово списание не може да бъде превеждана или възпроизвеждана под каквато и да е форма без писменото разрешение на издателя</p>
+                <p>{t('vuzf')}</p>
+                <p>{t('copy right')}</p>
             </div>
             <div className={styles.FooterDivNavigation}>
                 <br />
                 <div className={styles.FooterPikLogo}>
                     <Link to="/">
-                        <StyledImgPik src={logoPik} alt="" />
+                        <StyledImgPik src={i18n.language === "en" ? logo2 : logo} alt="" />
                     </Link>
                 </div>
                 <div className={styles.FooterLinks}>
@@ -71,18 +81,18 @@ export const Footer = () => {
                     <div className={styles.FooterItem}>
                         <StyledHr />
                         <StyledUl>
-                            <li><Link to="/">Начало</Link></li>
-                            <li><Link to="about">За списанието</Link></li>
-                            <li><Link to="archive">Архив</Link></li>
-                            <li><Link to="authors">Насоки за авторите</Link></li>
+                            <li><Link to="/">{t('home')}</Link></li>
+                            <li><Link to="about">{t('for the magazine')}</Link></li>
+                            <li><Link to="archive">{t('archive')}</Link></li>
+                            <li><Link to="authors">{t('guidelines for authors')}</Link></li>
                         </StyledUl>
                     </div>
 
                     <div className={styles.FooterItem}>
                         <StyledHr />
                         <StyledUl>
-                            <li><Link to="terms">Общи условия</Link></li>
-                            <li><Link to="policy">Политика за поверителност и защита на личните данни</Link></li>
+                            <li><Link to="terms">{t('general terms')}</Link></li>
+                            <li><Link to="policy">{t('privacy policy')}</Link></li>
                         </StyledUl>
                     </div>
 
@@ -91,7 +101,7 @@ export const Footer = () => {
                         <StyledUl>
                             <a href="http://vuzf.bg" target="_blank" rel="noreferrer">
                                 <li><StyledImgVuzf src={logoVUZF} alt="" /></li>
-                                <li>Висше училище по застраховане и финанси</li>
+                                <li>{t('vuzf')}</li>
                             </a>
                         </StyledUl>
                     </div>

@@ -1,7 +1,10 @@
+/* * {
+    border: 0.5px solid red;
+} */
+
 .main_menu {
     display: unset;
 }
-
 
 .inner_main_menu {
     margin: 0 auto;
@@ -45,6 +48,16 @@
     float: center;
 }
 
+.LaguageDiv{
+    color: #d0d9db;
+    font-weight: bold;
+    font-size: 1.5vw;
+
+    padding-right: 10px;
+    position: absolute;
+    top: 65px;
+    right: 0;
+}
 
 
 @media screen and (max-width: 880px) {
@@ -81,5 +94,9 @@
         float: none;
         padding-top: 0px;
     }
-    
+ 
+    .LaguageDiv{
+        font-size: 7vw;
+        top: 10px;
+    }
 }

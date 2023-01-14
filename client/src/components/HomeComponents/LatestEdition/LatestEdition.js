@@ -1,11 +1,13 @@
-import React from 'react'
+
+import { Link } from 'react-router-dom'
 
 import cover from '../../../assets/editions/korica4-01.jpg'
 
 import styles from "./LatestEdition.module.css";
 import styled from 'styled-components'
 
-import { Link } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
+
 
 const StyledImg = styled.img`
     width: 400px;
@@ -45,6 +47,9 @@ const Button = styled.button`
 
 export const LatestEdition = () => {
 
+    const { t } = useTranslation(["latest_edition"]);
+
+
     return (
 
 
@@ -55,18 +60,17 @@ export const LatestEdition = () => {
             </div>
             <div className={styles.LatestEditionInfo}>
                 <div className={styles.HeaderAndSubheader}>
-                    <h1><strong>Пари и култура</strong></h1>
-                    <h2><i>Брой 1/2022</i></h2>
+                    <h1><strong>{t('heading')}</strong></h1>
+                    <h2><i>{t('issue')} 1/2022</i></h2>
                 </div>
                 <div className={styles.Description}>
-                    <StyledPar>Стратегическото управление в държавата</StyledPar>
-                    <StyledPar>оценка на факторите и ефективността на иновационната дейност и дигитализацията на банките в българия</StyledPar>
-                    <StyledPar>climate change as a challende for the economy</StyledPar>
-                    <StyledPar>дигитализацията като предпоставка за устойчиво развитие при мсп в българия</StyledPar>
+                    <StyledPar>{t('par1')}</StyledPar>
+                    <StyledPar>{t('par2')}</StyledPar>
+                    <StyledPar>{t('par3')}</StyledPar>
                 </div>
                 <div className={styles.ReadMoreButton}>
                     <Link to='archive'>
-                        <Button>ПРОЧЕТЕТЕ ТУК</Button>
+                        <Button>{t('read here')}</Button>
                     </Link>
                 </div>
             </div>

@@ -7,69 +7,14 @@ export const Image = styled.img`
         max-height: 90vh;
 `
 
-// old
-// export const Logo = styled.img`
-//         position: absolute;
-//         top: 40%;
-//         left: 50%;
-//         width: auto;
-//         transform: translate(-50%, -50%);
-        
-//         @media all and (max-width: 880px){
-//                 width: 0px;
-//         }
-// `
-
-// old
-// export const Paragraph = styled.p`
-//         position: absolute;
-//         text-align: center;
-//         top: 70%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         color: white;
-//         font-size: 17px;
-
-//         @media all and (max-width: 880px){
-//                 position: absolute;
-//                 font-size: 13px;
-//                 width: 90%;
-//                 top: 80vh;
-//         }
-// `
-
-
-// old
-// export const Button = styled.button`
-//         position: absolute;
-//         top: 90%;
-//         left: 50%;
-//         width: 40%;
-//         transform: translate(-50%, -50%);
-//         color: black;
-//         font-size: 30px;
-//         padding: 5px;
-//         border-radius: 30px;
-//         cursor: pointer;
-//         background-color: #F5F5F5;
-
-//         &:hover {
-//             background-color: #F8F8FF;
-//         }
-
-        
-//         @media all and (max-width: 880px){
-//                 font-size: 10px;
-//                 top: 90vh;
-//         }
-// `
 
 export const Wrapper = styled.div`
         background-image: url(${img});
 
-        background-size: cover;
+        // background-size: 100vw;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-size: cover;
+        // background-attachment: fixed;
         background-position: center;
 
 
@@ -78,11 +23,10 @@ export const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
 
-        padding: 150px 0px 150px 0px;
+        padding: 15vh 0px 20vh 0px;
 `
 
 
-// remake
 export const Paragraph = styled.p`
 
         text-align: center;
@@ -99,18 +43,16 @@ export const Paragraph = styled.p`
         }
 `
 
-// remake
+
 export const Logo = styled.img`
 
-        width: auto;
+        width: 975px;
         
         @media all and (max-width: 880px){
                 width: 80vw;
         }
 `
 
-
-// remake 
 export const Button = styled.button`
        
         width: 30vw;

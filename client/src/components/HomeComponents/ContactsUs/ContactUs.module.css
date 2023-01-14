@@ -11,11 +11,6 @@
     padding: 35px;
 }
 
-.ContactUsIFrame {
-    /* width: 752px; */
-    /* border: 3px solid #d0d9db; */
-    /* box-shadow: 0 0 1px #d0d9db; */
-}
 
 .ContactUsContactInfo {
     padding: auto;
@@ -29,8 +24,10 @@
     color: #d0d9db;
     width: auto;
     font-size: 26px;
-    justify-content: center;
-    text-align: left;
+    /* justify-content: center; */
+    /* text-align: left; */
+    /* display: inline-block; */
+    vertical-align: auto;
 
     /* border: 2px solid #d0d9db;
     border-collapse: collapse;
@@ -40,11 +37,6 @@
     /* box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red; */
 }
 
-
-.ContactUsContactInfo table:hover {
-    /* transition: 0.3s; */
-    /* box-shadow: 0 0 10px #d0d9db; */
-}
 
 a {
     text-decoration: none;

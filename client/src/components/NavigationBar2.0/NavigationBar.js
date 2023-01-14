@@ -1,4 +1,5 @@
 // react
+import { useState } from 'react';
 import * as React from 'react';
 
 // styles
@@ -7,6 +8,7 @@ import styled from 'styled-components';
 
 // images
 import logo from '../../assets/logo/pklogo.png'
+import logo2 from '../../assets/logo/pklogoen.png'
 
 // react router dom
 import { NavLink, Link } from 'react-router-dom'
@@ -15,6 +17,10 @@ import { NavLink, Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+
+// i18next
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
 
 
 const MuiDropDown = styled.div`
@@ -80,30 +86,70 @@ const H1 = styled.h3`
 `
 
 const LogoPik = styled.img`
-    padding-top: 35px;
-    width: 300px;
+    top: 50px;
+    width: 15vw;
     margin: 0 auto;
     display: block;
     position: absolute;
     left: calc((100% - 15%) / 2);
     // z-index: 10;
 
-    @media screen and (max-width: 880px){
+    @media screen and (max-width: 920px){
         left: 0;
         // margin: 0;
         position: unset;
-           
+        top: 0;
+        padding-top: 40px;
+        width: 300px;
     }
 `
 
+const LangButtonEN = styled.button`
+    background-color: transparent;
+    border: none;
+    color: #878787;
+    cursor: pointer;
+    font-size: 1vw;
+
+    &:hover { background-color: transparent; }
+    
+    @media screen and (max-width: 880px){
+        font-size: 5vw;
+    }
+`
+
+const LangButtonBG = styled.button`
+    background-color: transparent;
+    border: none;
+    color: #878787;
+    cursor: pointer;
+    font-size: 1vw;
+
+    &:hover { background-color: transparent; }
+
+    @media screen and (max-width: 880px){
+        font-size: 5vw;
+    }
+`
 
 export const NavigationBar = () => {
 
 
     let activeStyle = {
         color: "#878787",
-        borderColor: "green"
     };
+
+    // language switching
+    const [lang, setLang] = useState("en")
+
+    const handleLang = lang => event => {
+
+        setLang(lang);
+        i18n.changeLanguage(lang);
+    };
+
+    const { t } = useTranslation(["navbar"]);
+
 
     //mui
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -120,11 +166,30 @@ export const NavigationBar = () => {
         <>
             <Nav>
                 <div className={styles.main_menu}>
+                    <div className={styles.LaguageDiv}>
+                        <LangButtonBG
+                            onClick={handleLang("bg")}
+                            style={{
+                                textShadow: lang === "bg" && '0 0 20px #d0d9db',
+                                color: lang === "bg" && '#d0d9db'
+                            }}
+                        >BG</LangButtonBG>
+                        |
+                        <LangButtonEN
+                            onClick={handleLang("en")}
+                            style={{
+                                textShadow: lang === "en" && '0 0 20px #d0d9db',
+                                color: lang === "en" && '#d0d9db'
+                            }}
+                        >EN</LangButtonEN>
+                    </div>
+
                     <Link to="/">
-                        <LogoPik src={logo} />
+                        <LogoPik src={lang === "bg" ? logo : logo2} alt="" />
                     </Link>
 
                     <div className={styles.inner_main_menu}>
+
                         <ul>
                             <li>
                                 <NavLink
@@ -133,7 +198,7 @@ export const NavigationBar = () => {
                                         isActive ? activeStyle : undefined
                                     }
                                 >
-                                    <H1>Начало</H1>
+                                    <H1>{t('home')}</H1>
                                 </NavLink>
                             </li>
 
@@ -144,7 +209,7 @@ export const NavigationBar = () => {
                                         isActive ? activeStyle : undefined
                                     }
                                 >
-                                    <H1>Архив</H1>
+                                    <H1>{t('archive')}</H1>
                                 </NavLink>
                             </li>
 
@@ -155,7 +220,7 @@ export const NavigationBar = () => {
                                         isActive ? activeStyle : undefined
                                     }
                                 >
-                                    <H1>Насоки за авторите</H1>
+                                    <H1>{t('guidelines for authors')}</H1>
                                 </NavLink>
                             </li>
 
@@ -165,7 +230,6 @@ export const NavigationBar = () => {
                                     <Button
                                         style={{
                                             textTransform: 'none',
-                                            // color: "#d0d9db",
                                             fontSize: '26px',
                                             padding: '0px',
                                             fontWeight: 'bold',
@@ -178,7 +242,7 @@ export const NavigationBar = () => {
                                         aria-expanded={open ? 'true' : undefined}
                                         onClick={handleClick}
                                     >
-                                        Още</Button>
+                                        {t('more')}</Button>
 
                                     <Menu
                                         id="basic-menu"
@@ -195,7 +259,7 @@ export const NavigationBar = () => {
                                                 style={{
                                                     color: "black",
                                                 }}
-                                                onClick={handleClose}>За списанието</MenuItem>
+                                                onClick={handleClose}>{t('for the magazine')}</MenuItem>
                                         </Link>
 
                                         <Link to="/editorialboard">
@@ -203,11 +267,12 @@ export const NavigationBar = () => {
                                                 style={{
                                                     color: "black",
                                                 }}
-                                                onClick={handleClose}>Редакторски колектив</MenuItem>
+                                                onClick={handleClose}>{t('editorial staff')}</MenuItem>
                                         </Link>
                                     </Menu>
                                 </MuiDropDown>
                                 {/* mui */}
+
                             </li>
                         </ul>
                     </div>

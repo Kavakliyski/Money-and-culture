@@ -132,3 +132,32 @@
         font-size: 16px;
     }
 }
+
+
+@media screen and (min-width: 601px)and (max-width: 1700px) {
+
+
+    .inner_main_menu ul {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .logo {
+        padding-top: 0px;
+        width: 20vw;
+        top: 30px;
+    }
+
+    .LaguageDiv {
+        font-size: 2vw;
+        top: 2px;
+    }
+
+    .DropDownContent {
+        display: flex;
+        flex-direction: column;
+        width: 15vw;
+        height: auto;
+        font-size: 10px;
+    }
+}

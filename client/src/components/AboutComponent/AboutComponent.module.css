@@ -9,26 +9,38 @@
 }
 
 
-hr {
-    color: #162123;
-    margin: 50px;
-    border-top: 3px solid #162123;
+@media all and (max-width: 1440px) {
+    .AboutComponentWrapper {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+}
+
+
+@media all and (max-width: 1024px) {
+    .AboutComponentWrapper {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
 }
 
 
 @media all and (max-width: 768px) {
-    .AboutComponentWrapper{
+    .AboutComponentWrapper {
         padding-left: 50px;
         padding-right: 50px;
     }
 }
 
-/* 
-@media only screen and (max-width: 1327px) {
-    .AboutComponentWrapper{
-        padding-left: 100px;
-        padding-right: 100px;
-    } 
 
+
+@media all and (max-width: 425px) {
+    .AboutComponentWrapper {
+        padding-left: auto;
+        padding-right: auto;
+    }
 }
-*/

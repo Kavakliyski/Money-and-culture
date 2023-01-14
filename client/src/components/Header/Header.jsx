@@ -32,7 +32,7 @@ const Links1 = styled.h3`
         border-radius: 30px;
     }
 
-    @media screen and (max-width: 880px){
+    @media screen and (max-width: 600px){
         justify-content: center;
 
         &:hover{
@@ -40,6 +40,11 @@ const Links1 = styled.h3`
         }
     }
 
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        padding: 1px;
+        font-size: 12px;
+    }
+    
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer */
@@ -69,6 +74,11 @@ const LinkDrop = styled.h3`
         }
     }
 
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        padding: 1px;
+        font-size: 12px;
+    }
+
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer */
@@ -87,6 +97,10 @@ const LangButtonEN = styled.button`
     @media screen and (max-width: 880px){
         font-size: 5vw;
     }
+
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        font-size: 2vw;
+    }
 `
 
 const LangButtonBG = styled.button`
@@ -100,6 +114,10 @@ const LangButtonBG = styled.button`
 
     @media screen and (max-width: 880px){
         font-size: 5vw;
+    }
+
+    @media screen and (min-width: 601px)and (max-width: 1700px) {
+        font-size: 2vw;
     }
 `
 

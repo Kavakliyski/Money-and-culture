@@ -6,10 +6,17 @@ import { ReactComponent as PhoneSvg } from '../../../assets/svg/phone.svg'
 import { ReactComponent as MailSvg } from '../../../assets/svg/mail.svg'
 
 // styles
-import styles from './ContactUs.module.css'
+import styles from './ContactUs.module.css';
+import styled from 'styled-components';
 
+// i18next
 import { useTranslation } from "react-i18next";
 
+
+const NewIframe = styled.iframe`
+    width: 100% !important;
+    height: 445px;
+`
 
 export const ContactUs = () => {
 
@@ -20,9 +27,9 @@ export const ContactUs = () => {
         <div className={styles.ContactUsWrapper}>
             <div className={styles.ContactUsInnerWrapper}>
                 <div className={styles.ContactUsIFrame}>
-                    <iframe
-                        width={752}
-                        height={445}
+                    <NewIframe
+                        // width={752}
+                        // height={445}
                         src="https://maps.google.com/maps?q=VUZF&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         frameBorder={0}
                     />

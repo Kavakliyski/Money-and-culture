@@ -40,15 +40,20 @@ const Links1 = styled.h3`
         }
     }
 
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none; /* Standard syntax */
+
 `
 
-const DropdownButton = styled.h3`
+const LinkDrop = styled.h3`
     color: #d0d9db;
     justify-content: center;
     padding: 20px;
     border: 3px solid transparent;
     border-radius: 15px;
-    cursor: help;
+    cursor: pointer;
 
     &:hover {
         transition: 0.25s;
@@ -63,6 +68,11 @@ const DropdownButton = styled.h3`
             border: 3px solid transparent;  
         }
     }
+
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none; /* Standard syntax */
 `
 
 const LangButtonEN = styled.button`
@@ -98,7 +108,41 @@ const Nav = styled.nav`
 
     @media (max-width: 600px) {
         height: auto;
-        min-height: 10vh;
+        min-height: 14vh;
+    }
+`
+
+const StyledBurger = styled.div`
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    color: #d0d9db !important;
+
+    div {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: ${({ open }) => open ? '#d0d9db' : '#d0d9db'};
+        border-radius: 10px;
+        transform-origin: 1px;
+        transition: all 0.3s linear;
+
+        &:nth-child(1) {
+            transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+        }
+
+        &:nth-child(2) {
+            transform: ${({ open }) => open ? 'translateX(-100%)' : 'translateX(0)'};
+            opacity: ${({ open }) => open ? 0 : 1};
+        }
+
+        &:nth-child(3) {
+            transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+        }
     }
 `
 
@@ -112,24 +156,6 @@ export const Header = () => {
 
     // dropdown
     const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef(null);
-
-    const handleClickOutside = event => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(false);
-        };
-    };
-
-    useEffect(() => {
-        if (isOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isOpen]);
 
     useEffect(() => {
         if (isOpen) {
@@ -184,10 +210,15 @@ export const Header = () => {
                     <img src={lang === "bg" ? logo : logo2} alt="" className={styles.logo} />
                 </Link>
 
-                <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>&#9776;</button>
+                <div className={styles.menuToggle}>
+                        <StyledBurger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+                            <div />
+                            <div />
+                            <div />
+                        </StyledBurger>
+                </div>
 
                 <div className={styles.inner_main_menu}>
-
                     <ul className={`${styles.navbar} ${menuOpen ? styles.open : ''}`}>
                         <li>
                             <NavLink
@@ -222,21 +253,23 @@ export const Header = () => {
                                 <Links1>{t('guidelines for authors')}</Links1>
                             </NavLink>
                         </li>
+
                         <li>
-                            <div className={styles.moreDropdown}>
-                                <DropdownButton
+                            <div>
+                                <LinkDrop
                                     onClick={() => setIsOpen(!isOpen)}
-                                    ref={dropdownRef}
-                                >{t('more')}
-                                </DropdownButton>
+                                >{t('more')}</LinkDrop>
                                 {isOpen && (
-                                    <ul className={styles.moreDropdownContent}>
-                                        <li >Option 1</li>
-                                        <li>Option 2</li>
-                                        <li>Option 3</li>
-                                    </ul>
+                                    <div className={styles.DropDownContent}>
+                                        <NavLink to="about">{t('about')}</NavLink>
+                                        <NavLink to="editorialboard">{t('editorial staff')}</NavLink>
+                                        <NavLink to="terms">{t('general terms')}</NavLink>
+                                        <NavLink to="policy">{t('privacy policy')}</NavLink>
+                                    </div>
                                 )}
+
                             </div>
+
                         </li>
 
                     </ul>

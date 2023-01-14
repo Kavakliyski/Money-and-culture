@@ -61,7 +61,7 @@
 
 .DropDownContent {
     position: absolute;
-    width: auto;
+    width: 200px;
     background-color: #d0d9db;
     min-width: auto;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
@@ -75,7 +75,6 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    max-width: 8.5vw;
 }
 
 .DropDownContent a:hover {
@@ -105,7 +104,8 @@
         position: absolute;
         background-color: transparent;
         border: none;
-        top: 10px;
+        top: 53px;
+        left: 15px;
     }
 
     .LaguageDiv {
@@ -119,16 +119,16 @@
     }
 
     .logo {
+        padding-top: 0px;
         width: 60vw;
-        padding-top: 120px;
+        top: 70px;
     }
 
     .DropDownContent {
         display: flex;
         flex-direction: column;
         width: 50vw;
-        text-align: center;
-        justify-content: center;
         height: auto;
+        font-size: 16px;
     }
 }

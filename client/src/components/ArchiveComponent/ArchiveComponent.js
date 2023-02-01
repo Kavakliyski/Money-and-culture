@@ -67,6 +67,24 @@ export const ArchiveComponent = () => {
             <div className={styles.ArchiveComponentDiv}>
 
                 {listItems}
+                
+                {/* 2022 */}
+                <div className={styles.ArchiveComponentCards}>
+                    <iframe src="https://drive.google.com/file/d/12GIPAonrv6o6W3haDxZr-d2WI5GAu_92/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>1/2022</h2>
+                </div>
+                <div className={styles.ArchiveComponentCards}>
+                    <iframe src="https://drive.google.com/file/d/1Zr4k3XlqhxU5TRWP9CaCxkjTsqsxmGBc/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>2/2022</h2>
+                </div>
+                <div className={styles.ArchiveComponentCards}>
+                    <iframe src="https://drive.google.com/file/d/1gHnme1E1BNINaT3wH7pnCV6te6rujtvc/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>3/2022</h2>
+                </div>
+                <div className={styles.ArchiveComponentCards}>
+                    <iframe src="https://drive.google.com/file/d/1Xnl8fRazONjH_AddeCLrx2NLeXeiHtq5/preview" width="440" height="610" allow="autoplay"></iframe>
+                    <h2>4/2022</h2>
+                </div>
 
                 {/* 2021 */}
                 <div className={styles.ArchiveComponentCards}>

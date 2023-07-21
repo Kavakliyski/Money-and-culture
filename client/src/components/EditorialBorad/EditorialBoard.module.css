@@ -1,8 +1,14 @@
 .EditorialBoardWrapper {
     background-color: #d0d9db;
-    /* padding: 10px; */
+    padding: 10px;
     color: #162123;
     width: auto;
+
+
+    .EditorialBoardUL {
+        list-style-type: none;
+        /* color: red; */
+    }
 }
 
 .EditorialBoard {
